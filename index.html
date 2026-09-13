@@ -1,36 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <style>
-        body {
-            background-color: gray;
-        }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi página personal</title>
+    <title>Mi Portafolio | Jj</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body bgcolor="gray">
+    <header>
+        <h1>Mi Portafolio</h1>
+        <p class="slogan">Show me what you can do.</p>
+    </header>
 
-    <h1>Mi página personal</h1>
+    <main class="contenedor">
 
-    <h2>Sobre mí</h2>
-    <p>Estoy aprendiendo HTML y desarrollo web.</p>
+        <section class="perfil">
+            <img src="foto.jpg" alt="Fotografía de Jj" class="foto">
 
-    <h2>Mis habilidades</h2>
-    <ul>
-        <li>HTML5 básico</li>
-        <li>Excel</li>
-        <li>Power Query</li>
-    </ul>
+            <h2>Hola, soy Jj</h2>
 
-    <h2>Mis hobbies</h2>
-    <ul>
-        <li>Videojuegos</li>
-        <li>Películas</li>
-        <li>Aprender tecnología</li>
-    </ul>
+            <p>
+                Soy estudiante de Ingeniería Industrial, interesado en
+                la tecnología, el diseño y el análisis de datos.
+                Me gusta aprender nuevas herramientas y demostrar
+                mis conocimientos a través de proyectos.
+            </p>
+        </section>
 
+        <section class="habilidades">
+            <h2>Mis habilidades</h2>
+            <p>Selecciona una sección para conocer más.</p>
+
+            <div class="habilidad">
+                <button class="boton-habilidad">
+                    AutoCAD
+                    <span>+</span>
+                </button>
+                <div class="contenido-habilidad">
+                    <p>
+                        Diseño de planos, vistas, cotas y proyectos
+                        de mobiliario en AutoCAD.
+                    </p>
+                </div>
+            </div>
+
+            <div class="habilidad">
+                <button class="boton-habilidad">
+                    Excel
+                    <span>+</span>
+                </button>
+                <div class="contenido-habilidad">
+                    <p>
+                        Tablas dinámicas, fórmulas, limpieza de datos,
+                        dashboards y herramientas de análisis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="habilidad">
+                <button class="boton-habilidad">
+                    Power Query
+                    <span>+</span>
+                </button>
+                <div class="contenido-habilidad">
+                    <p>
+                        Transformación, limpieza y preparación
+                        de datos para análisis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="habilidad">
+                <button class="boton-habilidad">
+                    HTML y CSS
+                    <span>+</span>
+                </button>
+                <div class="contenido-habilidad">
+                    <p>
+                        Creación de páginas web y diseño básico
+                        utilizando HTML y CSS.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Jj | Mi Portafolio</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
