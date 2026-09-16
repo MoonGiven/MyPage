@@ -145,6 +145,73 @@ body {
 .cerrar-modal:hover {
     color: #cccccc; /* Cambia a gris claro al pasar el mouse por encima */
 }
+/* ==========================================================================
+   DISEÑO MODERNO PARA LAS SECCIONES DE PROYECTOS (AUTOCAD Y EXCEL)
+   ========================================================================== */
+
+/* Contenedor individual de cada habilidad/proyecto */
+.habilidad {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco limpio semi-transparente */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.habilidad:hover {
+    transform: translateY(-2px); /* Se eleva un poquito al pasar el mouse */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* El botón que expande el contenido */
+.boton-habilidad {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222222;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Alinea el texto a la izquierda y el "+" a la derecha */
+    align-items: center;
+    font-family: sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.boton-habilidad:hover {
+    background-color: rgba(0, 0, 0, 0.03); /* Se oscurece un poquito al pasar el cursor */
+}
+
+/* El símbolo + o - */
+.boton-habilidad span {
+    font-size: 22px;
+    color: #555555;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+/* Contenedor del texto que se expande */
+.contenido-habilidad {
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Animación fluida de apertura */
+    background-color: #ffffff; /* Fondo completamente blanco para el contenido */
+}
+
+/* El texto o párrafo dentro de la sección expandida */
+.contenido-habilidad p {
+    padding: 20px 25px;
+    margin: 0;
+    line-height: 1.6;
+    color: #444444;
+    font-size: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
 
 /* Animación de zoom para la foto */
 @keyframes zoom {
