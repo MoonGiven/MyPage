@@ -1,11 +1,11 @@
 body {
     margin: 0;
     min-height: 100vh;
-
     background-image: url("images/yue-ma-Nwpyc1dks4g-unsplash.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: sans-serif;
 }
 
 /* Contenedor principal */
@@ -17,30 +17,45 @@ body {
     padding: 0 30px;
 }
 
-/* Sección izquierda: perfil */
+/* Sección izquierda: perfil centrado */
 .perfil {
     width: 35%;
-    text-align: left;
+    text-align: center; /* Centra todo el contenido de la columna izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura el centrado perfecto de los elementos */
 }
 
-/* Foto de perfil */
+/* Foto de perfil mejorada */
 .foto {
-    width: 100px;
-    height: 100px;
+    width: 140px; /* Tamaño más grande y visible */
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     display: block;
     margin-bottom: 20px;
+    cursor: pointer; /* Cambia a manita para avisar que se puede hacer clic */
+    transition: transform 0.3s ease; /* Pequeño efecto visual */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra elegante para resaltar de la pared del fondo */
 }
+
+.foto:hover {
+    transform: scale(1.05); /* Se agranda un poquito al pasar el mouse por encima */
+}
+
 /* Nombre */
 .perfil h2 {
+    margin-top: 5px;
     margin-bottom: 15px;
+    color: #222222;
 }
 
 /* Texto debajo de la foto */
 .perfil p {
     line-height: 1.7;
     max-width: 350px;
+    text-align: justify; /* Hace que tu descripción se lea más ordenada */
+    color: #333333;
 }
 
 /* Sección derecha */
@@ -71,7 +86,6 @@ body {
     margin: 0;
     font-size: 24px;
     color: #222222; /* Color oscuro para resaltar sobre el blanco */
-    font-family: sans-serif;
 }
 
 .header-contenido .slogan {
@@ -79,4 +93,61 @@ body {
     font-size: 16px;
     color: #555555; /* Un gris elegante para la frase */
     font-style: italic;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA VENTANA EMERGENTE DE LA FOTO (MODAL INTERACTIVO)
+   ========================================================================== */
+.modal {
+    display: none; /* Se mantiene completamente oculta por defecto */
+    position: fixed; /* Se fija sobre toda la pantalla */
+    z-index: 1000; /* Asegura que se posicione por encima de cualquier otro elemento */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente detrás de la foto */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Clase que activa el JavaScript para mostrarla en pantalla */
+.modal.mostrar {
+    display: flex;
+}
+
+/* Contenedor interno de la imagen ampliada */
+.contenido-modal {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* No se desborda en pantallas pequeñas */
+    max-height: 80vh; /* No sobrepasa el alto del navegador */
+    border-radius: 10px; /* Bordes ligeramente suaves */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    animation: zoom 0.3s ease-in-out; /* Animación de apertura suave */
+}
+
+/* Botón de cierre "X" */
+.cerrar-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.cerrar-modal:hover {
+    color: #cccccc; /* Cambia a gris claro al pasar el mouse por encima */
+}
+
+/* Animación de zoom para la foto */
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
