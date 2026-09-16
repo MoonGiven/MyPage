@@ -7,3 +7,44 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+```css
+.contenedor {
+    display: flex;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+
+/* Sección izquierda: perfil */
+.perfil {
+    width: 35%;
+    text-align: left;
+}
+
+/* Foto de perfil */
+.foto {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* Nombre */
+.perfil h2 {
+    margin-bottom: 15px;
+}
+
+/* Texto debajo de la foto */
+.perfil p {
+    line-height: 1.7;
+    max-width: 350px;
+}
+
+/* Sección derecha */
+.habilidades {
+    width: 65%;
+}
+```
