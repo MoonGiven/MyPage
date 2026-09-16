@@ -18,7 +18,7 @@
     <main class="contenedor">
 
         <section class="perfil">
-            <!-- Al hacer clic aquí, se activará la ventana emergente -->
+            <!-- Al hacer clic aquí, se activará la ventana emergente de tu foto -->
             <img src="images/yo.png" alt="Fotografía" class="foto">
 
             <h2>Hola, soy Jj</h2>
@@ -34,30 +34,20 @@
             <h2>Mis habilidades</h2>
             <p>Selecciona una sección para conocer más.</p>
 
-            <div class="habilidad">
+            <!-- Tarjeta de AutoCAD (Ahora abre el cuadro flotante del proyecto) -->
+            <div class="habilidad" id="tarjeta-autocad">
                 <button class="boton-habilidad">
                     AutoCAD
                     <span>+</span>
                 </button>
-                <div class="contenido-habilidad">
-                    <p>
-                        Diseño de planos, vistas, cotas y proyectos
-                        de mobiliario en AutoCAD.
-                    </p>
-                </div>
             </div>
 
-            <div class="habilidad">
+            <!-- Tarjeta de Excel (Por ahora la dejamos lista) -->
+            <div class="habilidad" id="tarjeta-excel">
                 <button class="boton-habilidad">
                     Excel
                     <span>+</span>
                 </button>
-                <div class="contenido-habilidad">
-                    <p>
-                        Tablas dinámicas, fórmulas, limpieza de datos,
-                        dashboards y herramientas de análisis.
-                    </p>
-                </div>
             </div>
         </section>
 
@@ -67,12 +57,41 @@
         <p>© 2026 Miranda CV | Mi Portafolio</p>
     </footer>
 
-    <!-- VENTANA EMERGENTE (MODAL) PARA AMPLIAR LA FOTO -->
+    <!-- ==========================================================================
+       VENTANAS EMERGENTES (MODALS INTERACTIVOS)
+       ========================================================================== -->
+
+    <!-- 1. MODAL PARA AMPLIAR TU FOTO DE PERFIL -->
     <div id="modal-foto" class="modal">
         <span class="cerrar-modal">&times;</span>
         <img class="contenido-modal" src="images/yo.png" alt="Foto ampliada">
     </div>
 
+    <!-- 2. NUEVO MODAL INTERACTIVO BLANCO PARA TU PROYECTO DE AUTOCAD -->
+    <div id="modal-autocad" class="modal-proyecto">
+        <div class="contenido-proyecto">
+            <span class="cerrar-proyecto">&times;</span>
+            
+            <h2>Proyecto: Mobiliario Industrial Optimizado</h2>
+            <p class="subtitulo-proyecto">Diseño de planos, vistas y cotas en AutoCAD</p>
+            
+            <!-- Contenedor para la imagen real de tu plano -->
+            <div class="imagen-proyecto-contenedor">
+                <img src="images/tu-plano-autocad.png" alt="Plano de AutoCAD o espacio vacío" class="imagen-proyecto-real">
+            </div>
+            
+            <div class="descripcion-proyecto-detallada">
+                <h3>Descripción Técnica</h3>
+                <p>
+                    Desarrollo y modelado de estructuras de mobiliario utilizando herramientas de AutoCAD. 
+                    El proyecto incluye la creación de planos constructivos detallados, distribución de vistas ortogonales, 
+                    acotado normalizado y optimización de espacios para entornos de manufactura y distribución industrial.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
