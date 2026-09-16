@@ -1,37 +1,11 @@
-
-// ==========================================
-// 1. CONTROL DE BOTONES (AUTOCAD Y EXCEL)
-// ==========================================
-document.querySelectorAll('.boton-habilidad').forEach(boton => {
-    boton.addEventListener('click', () => {
-        const contenedorHabilidad = boton.parentElement;
-        const contenido = contenedorHabilidad.querySelector('.contenido-habilidad');
-        const icono = boton.querySelector('span');
-
-        // Alternar el estado activo en el contenedor
-        contenedorHabilidad.classList.toggle('activo');
-
-        // Controlar la animación de altura fluida
-        if (contenedorHabilidad.classList.contains('activo')) {
-            contenido.style.maxHeight = contenido.scrollHeight + "px";
-            icono.textContent = '−';
-        } else {
-            contenido.style.maxHeight = null;
-            icono.textContent = '+';
-        }
-    });
-});
-
-// ==========================================
-// 2. CONTROL DE LA VENTANA EMERGENTE DE LA FOTO
-// ==========================================
+// ==========================================================================
+// 1. CONTROL DE LA VENTANA EMERGENTE DE LA FOTO DE PERFIL
+// ==========================================================================
 const fotoPerfil = document.querySelector('.foto');
 const modalFoto = document.getElementById('modal-foto');
 const botonCerrarModal = document.querySelector('.cerrar-modal');
 
-// Si existe la foto en la página, activamos el clic para abrir
 if (fotoPerfil && modalFoto && botonCerrarModal) {
-    
     // Al hacer clic en tu foto, mostramos el modal interactivo
     fotoPerfil.addEventListener('click', () => {
         modalFoto.classList.add('mostrar');
@@ -49,3 +23,36 @@ if (fotoPerfil && modalFoto && botonCerrarModal) {
         }
     });
 }
+
+// ==========================================================================
+// 2. CONTROL DEL CUADRO EMERGENTE BLANCO PARA EL PROYECTO DE AUTOCAD
+// ==========================================================================
+const tarjetaAutoCAD = document.getElementById('tarjeta-autocad');
+const modalAutoCAD = document.getElementById('modal-autocad');
+const cerrarAutoCAD = document.querySelector('.cerrar-proyecto');
+
+if (tarjetaAutoCAD && modalAutoCAD && cerrarAutoCAD) {
+    // Capturamos el botón que está dentro de la tarjeta de AutoCAD
+    const botonAutoCAD = tarjetaAutoCAD.querySelector('.boton-habilidad');
+
+    if (botonAutoCAD) {
+        // Abrir cuadro blanco de proyecto al hacer clic
+        botonAutoCAD.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalAutoCAD.classList.add('mostrar');
+        });
+
+        // Cerrar con la X en la esquina superior derecha
+        cerrarAutoCAD.addEventListener('click', () => {
+            modalAutoCAD.classList.remove('mostrar');
+        });
+
+        // Cerrar haciendo clic afuera en el fondo oscuro
+        modalAutoCAD.addEventListener('click', (e) => {
+            if (e.target === modalAutoCAD) {
+                modalAutoCAD.classList.remove('mostrar');
+            }
+        });
+    }
+}
+
