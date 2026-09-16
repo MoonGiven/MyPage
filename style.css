@@ -47,3 +47,36 @@ body {
 .habilidades {
     width: 65%;
 }
+
+/* Barra superior blanca */
+.barra-superior {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco con una pizca ligera de transparencia */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil abajo de la barra */
+    padding: 15px 0;
+    width: 100%;
+}
+
+/* Contenedor interno para alinear los elementos */
+.header-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between; /* Empuja el título a la izquierda y el slogan a la derecha */
+    align-items: center; /* Los centra verticalmente */
+}
+
+/* Estilos para los textos dentro de la barra */
+.header-contenido h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #222222; /* Color oscuro para resaltar sobre el blanco */
+    font-family: sans-serif;
+}
+
+.header-contenido .slogan {
+    margin: 0;
+    font-size: 16px;
+    color: #555555; /* Un gris elegante para la frase */
+    font-style: italic;
+}
