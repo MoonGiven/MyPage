@@ -7,7 +7,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-```css
+
+/* Contenedor principal */
 .contenedor {
     display: flex;
     gap: 80px;
@@ -24,12 +25,12 @@ body {
 
 /* Foto de perfil */
 .foto {
-    width: 220px;
-    height: 220px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 /* Nombre */
@@ -47,4 +48,3 @@ body {
 .habilidades {
     width: 65%;
 }
-```
