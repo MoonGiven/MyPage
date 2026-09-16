@@ -34,7 +34,7 @@
             <h2>Mis habilidades</h2>
             <p>Selecciona una sección para conocer más.</p>
 
-            <!-- Tarjeta de AutoCAD (Ahora abre el cuadro flotante del proyecto) -->
+            <!-- Tarjeta de AutoCAD (Abre el cuadro flotante del proyecto) -->
             <div class="habilidad" id="tarjeta-autocad">
                 <button class="boton-habilidad">
                     AutoCAD
@@ -42,7 +42,7 @@
                 </button>
             </div>
 
-            <!-- Tarjeta de Excel (Por ahora la dejamos lista) -->
+            <!-- Tarjeta de Excel (Lista para el futuro) -->
             <div class="habilidad" id="tarjeta-excel">
                 <button class="boton-habilidad">
                     Excel
@@ -67,25 +67,69 @@
         <img class="contenido-modal" src="images/yo.png" alt="Foto ampliada">
     </div>
 
-    <!-- 2. NUEVO MODAL INTERACTIVO BLANCO PARA TU PROYECTO DE AUTOCAD -->
+    <!-- 2. MODAL AVANZADO BLANCO CON PESTAÑAS PARA TU PROYECTO DE AUTOCAD -->
     <div id="modal-autocad" class="modal-proyecto">
         <div class="contenido-proyecto">
             <span class="cerrar-proyecto">&times;</span>
             
-            <h2>Proyecto: Mobiliario Industrial Optimizado</h2>
-            <p class="subtitulo-proyecto">Diseño de planos, vistas y cotas en AutoCAD</p>
+            <h2>Proyecto: Mueble Independiente Residencial</h2>
+            <p class="subtitulo-proyecto">Modelado 3D y Planimetría Avanzada – Un homenaje con propósito</p>
             
-            <!-- Contenedor para la imagen real de tu plano -->
-            <div class="imagen-proyecto-contenedor">
-                <img src="images/tu-plano-autocad.png" alt="Plano de AutoCAD o espacio vacío" class="imagen-proyecto-real">
+            <!-- Botones selectores de las pestañas -->
+            <div class="proyecto-tabs-navegacion">
+                <button class="tab-btn active" data-tab="tab-render">Render & Estilos 3D</button>
+                <button class="tab-btn" data-tab="tab-vistas">Vistas y Cotas (Model)</button>
+                <button class="tab-btn" data-tab="tab-pdf">Láminas Oficiales (PDF)</button>
             </div>
-            
+
+            <!-- CONTENIDO DE LA PESTAÑA 1: RENDER -->
+            <div id="tab-render" class="tab-content active">
+                <div class="imagen-principal-contenedor">
+                    <img src="images/3D RENDER FINAL.png" alt="Render Final 3D" class="img-proyecto-display">
+                </div>
+                <div class="galeria-variantes-grid">
+                    <div class="variante-item"><img src="images/Shaded.png" alt="Sombreado"><p>Shaded</p></div>
+                    <div class="variante-item"><img src="images/Shaded with Grey.png" alt="Sombreado Gris"><p>Grey</p></div>
+                    <div class="variante-item"><img src="images/Modelo 3D xray.png" alt="Rayos X"><p>X-Ray</p></div>
+                    <div class="variante-item"><img src="images/2D Wireframe.png" alt="Estructura Alámbrica"><p>Wireframe</p></div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DE LA PESTAÑA 2: VISTAS TÉCNICAS -->
+            <div id="tab-vistas" class="tab-content">
+                <div class="vistas-tecnicas-grid">
+                    <div class="vista-tecnica-item"><img src="images/Vista Planta desde Model con cotas.png" alt="Vista Planta"><p>Vista Planta (Cotas)</p></div>
+                    <div class="vista-tecnica-item"><img src="images/Vista frontal con cotas desde model.png" alt="Vista Frontal"><p>Vista Frontal (Cotas)</p></div>
+                    <div class="vista-tecnica-item"><img src="images/Vista lateral con cotas desde model.png" alt="Vista Lateral"><p>Vista Lateral (Cotas)</p></div>
+                    <div class="vista-tecnica-item"><img src="images/Isometrico 2d.png" alt="Isométrico 2D"><p>Isométrico 2D</p></div>
+                    <div class="vista-tecnica-item"><img src="images/Vista frontal corte sin cotas desde model.png" alt="Corte Frontal"><p>Corte Frontal</p></div>
+                    <div class="vista-tecnica-item"><img src="images/Vista lateral Corte A-A con cotas desde model.png" alt="Corte Lateral A-A"><p>Corte A-A (Cotas)</p></div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DE LA PESTAÑA 3: LÁMINAS EN PDF -->
+            <div id="tab-pdf" class="tab-content">
+                <p style="margin-top: 0; color: #555; font-size: 14px;">Usa los controles del visor interactivo para navegar por tus planos normados:</p>
+                <div class="pdf-split-contenedor">
+                    <div class="pdf-box">
+                        <h4>Lámina A1 - Planos de Conjunto</h4>
+                        <iframe src="images/A3 Lamina Isai A1.pdf" width="100%" height="350px"></iframe>
+                    </div>
+                    <div class="pdf-box">
+                        <h4>Lámina A2 - Detalles y Cortes</h4>
+                        <iframe src="images/A3 Lamina Isai A2.pdf" width="100%" height="350px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESCRIPCIÓN TÉCNICA INFERIOR -->
             <div class="descripcion-proyecto-detallada">
                 <h3>Descripción Técnica</h3>
                 <p>
-                    Desarrollo y modelado de estructuras de mobiliario utilizando herramientas de AutoCAD. 
-                    El proyecto incluye la creación de planos constructivos detallados, distribución de vistas ortogonales, 
-                    acotado normalizado y optimización de espacios para entornos de manufactura y distribución industrial.
+                    Este proyecto consiste en el desarrollo integral, modelado 3D y planimetría técnica de un mueble de almacenamiento independiente. El diseño es una recreación digital fiel y un homenaje a un mueble fabricado en la vida real por un artesano excepcional que ya no está con nosotros.
+                </p>
+                <p style="margin-top: 10px;">
+                    Desde la perspectiva técnica de la Ingeniería Industrial, se ejecutó el modelado completo de la estructura y la simulación de iluminación interna. Asimismo, se generaron las láminas normadas en formato A3 con acotado de precisión de todos sus componentes funcionales —incluyendo cajoneras y puertas batientes— junto a sus respectivas vistas diédricas (planta, alzado, perfil) y detalles de cortes transversales para su correcta interpretación técnica y espacial.
                 </p>
             </div>
         </div>
