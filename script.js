@@ -56,3 +56,29 @@ if (tarjetaAutoCAD && modalAutoCAD && cerrarAutoCAD) {
     }
 }
 
+// ==========================================================================
+// 3. CONTROL DE PESTAÑAS INTERNAS DEL CUADRO DE AUTOCAD (TABS)
+// ==========================================================================
+const botonesPestana = document.querySelectorAll('.tab-btn');
+const contenidosPestana = document.querySelectorAll('.tab-content');
+
+if (botonesPestana.length > 0 && contenidosPestana.length > 0) {
+    botonesPestana.forEach(boton => {
+        boton.addEventListener('click', () => {
+            // Quitar la clase activa de todos los botones y contenidos de pestañas
+            botonesPestana.forEach(b => b.classList.remove('active'));
+            contenidosPestana.forEach(c => c.classList.remove('active'));
+
+            // Activar el botón seleccionado
+            boton.classList.add('active');
+
+            // Activar el bloque de contenido correspondiente mediante su ID único
+            const idContenido = boton.getAttribute('data-tab');
+            const contenidoActivo = document.getElementById(idContenido);
+            if (contenidoActivo) {
+                contenidoActivo.classList.add('active');
+            }
+        });
+    });
+}
+
