@@ -181,7 +181,7 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* El botón que expande el contenido */
+/* El botón que abre el proyecto */
 .boton-habilidad {
     width: 100%;
     background: none;
@@ -211,26 +211,119 @@ body {
     transition: color 0.2s ease;
 }
 
-/* Contenedor del texto que se expande */
-.contenido-habilidad {
-    max-height: 0; /* Oculto por defecto */
-    overflow: hidden;
-    transition: max-height 0.3s ease-out; /* Animación fluida de apertura */
-    background-color: #ffffff; /* Fondo completamente blanco para el contenido */
+
+/* ==========================================================================
+   NUEVOS ESTILOS PARA EL CUADRO DEL PROYECTO FLOTANTE (MODAL BLANCO)
+   ========================================================================== */
+.modal-proyecto {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1100; /* Un paso por encima de la barra superior */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente detrás del cuadro */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* El texto o párrafo dentro de la sección expandida */
-.contenido-habilidad p {
-    padding: 20px 25px;
-    margin: 0;
-    line-height: 1.6;
-    color: #444444;
+/* Clase que activa el JavaScript para mostrarlo */
+.modal-proyecto.mostrar {
+    display: flex;
+}
+
+/* El contenedor blanco interno del proyecto */
+.contenido-proyecto {
+    background-color: #ffffff;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: zoom 0.3s ease-in-out; /* Misma animación fluida de tu foto */
+    max-height: 85vh; /* Evita que se salga si la pantalla es pequeña */
+    overflow-y: auto; /* Permite hacer scroll interno si el texto es muy largo */
+}
+
+/* Botón "X" de cierre */
+.cerrar-proyecto {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #888888;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.cerrar-proyecto:hover {
+    color: #222222;
+}
+
+/* Títulos internos del cuadro */
+.contenido-proyecto h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #111111;
+    font-size: 24px;
+}
+
+.subtitulo-proyecto {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #666666;
+    font-style: italic;
     font-size: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Animación de zoom para la foto */
+/* Contenedor de la imagen de tu plano */
+.imagen-proyecto-contenedor {
+    width: 100%;
+    background-color: #f5f5f5; /* Fondo gris claro mientras colocas tu imagen */
+    border: 1px dashed #cccccc;
+    border-radius: 8px;
+    min-height: 250px; /* Espacio reservado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.imagen-proyecto-real {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Textos informativos inferiores */
+.descripcion-proyecto-detallada h3 {
+    color: #222222;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.descripcion-proyecto-detallada p {
+    color: #555555;
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 0;
+    text-align: justify;
+}
+
+
+/* ==========================================================================
+   ANIMACIÓN GLOBAL DE APERTURA (ZOOM)
+   ========================================================================== */
 @keyframes zoom {
-    from { transform: scale(0.7); opacity: 0; }
+    from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
 }
