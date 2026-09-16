@@ -437,3 +437,76 @@ body {
     from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+/* ==========================================================================
+   ESTILOS RESPONSIVOS (DISEÑO ADAPTABLE PARA PANTALLAS DE CELULARES)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Ajustes del Contenedor Principal */
+    .contenedor {
+        flex-direction: column; /* Cambia de dos columnas a una sola fila vertical */
+        gap: 40px;
+        margin-top: 140px; /* Le da más espacio abajo de la barra fija */
+        padding: 0 20px;
+    }
+
+    /* 2. Ajustes de las Secciones (Perfil y Habilidades ocupan el 100% de ancho) */
+    .perfil, .habilidades {
+        width: 100%;
+    }
+
+    /* 3. Ajustes de la Barra Superior */
+    .header-contenido {
+        flex-direction: column; /* El título va arriba y la frase abajo */
+        gap: 80px;
+        text-align: center;
+    }
+
+    .header-contenido h1 {
+        font-size: 20px;
+    }
+
+    .header-contenido .slogan {
+        font-size: 13px;
+    }
+
+    /* 4. Ajustes de las Cuadrículas del Cuadro de AutoCAD */
+    .contenido-proyecto {
+        padding: 20px 15px; /* Reduce los márgenes internos para ganar espacio */
+    }
+
+    .proyecto-tabs-navegacion {
+        flex-wrap: wrap; /* Si los botones de las pestañas no caben, se acomodan abajo */
+        gap: 5px;
+    }
+
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    /* La cuadrícula de 4 variantes 3D pasa a ser de 2 columnas en móvil */
+    .galeria-variantes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* La cuadrícula de 3 vistas técnicas pasa a ser de 1 sola columna para que se lean bien las cotas */
+    .vistas-tecnicas-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Los dos visores PDF pasan a ponerse uno abajo del otro */
+    .pdf-split-contenedor {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pdf-box iframe {
+        height: 300px; /* Altura un poco más cómoda para pantallas táctiles */
+    }
+}
+
