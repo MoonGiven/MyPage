@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,28 +8,27 @@
 </head>
 <body>
 
-<header class="barra-superior">
-    <div class="header-contenido">
-        <h1>Mi Portafolio</h1>
-        <p class="slogan">Show me what you can do; don't tell me</p>
-    </div>
-</header>
+    <header class="barra-superior">
+        <div class="header-contenido">
+            <h1>Mi Portafolio</h1>
+            <p class="slogan">Show me what you can do; don't tell me</p>
+        </div>
+    </header>
 
     <main class="contenedor">
 
-<section class="perfil">
+        <section class="perfil">
+            <!-- Al hacer clic aquí, se activará la ventana emergente -->
+            <img src="images/yo.png" alt="Fotografía" class="foto">
 
-    <img src="images/yo.png" alt="Fotografía" class="foto">
+            <h2>Hola, soy Jj</h2>
 
-    <h2>Hola, soy Jj</h2>
-
-    <p>
-        Soy estudiante de Ingeniería Industrial en pausa, con la determinación
-        de continuar mis estudios y alcanzar mis objetivos. Me gusta aprender
-        nuevas herramientas y demostrar lo que puedo realizar a través de mis proyectos.
-    </p>
-
-</section>
+            <p>
+                Soy estudiante de Ingeniería Industrial en pausa, con la determinación
+                de continuar mis estudios y alcanzar mis objetivos. Me gusta aprender
+                nuevas herramientas y demostrar lo que puedo realizar a través de mis proyectos.
+            </p>
+        </section>
 
         <section class="habilidades">
             <h2>Mis habilidades</h2>
@@ -61,14 +59,19 @@
                     </p>
                 </div>
             </div>
-
-
+        </section>
 
     </main>
 
     <footer>
         <p>© 2026 Miranda CV | Mi Portafolio</p>
     </footer>
+
+    <!-- VENTANA EMERGENTE (MODAL) PARA AMPLIAR LA FOTO -->
+    <div id="modal-foto" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" src="images/yo.png" alt="Foto ampliada">
+    </div>
 
     <script src="script.js"></script>
 </body>
