@@ -8,12 +8,12 @@ body {
     font-family: sans-serif;
 }
 
-/* Contenedor principal */
+/* Contenedor principal: ajustado el margen superior para no ser tapado por la barra fija */
 .contenedor {
     display: flex;
     gap: 80px;
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 120px auto 60px auto; 
     padding: 0 30px;
 }
 
@@ -63,15 +63,29 @@ body {
     width: 65%;
 }
 
-/* Barra superior blanca */
+/* Títulos y textos de la sección derecha con más fuerza y contraste */
+.habilidades h2 {
+    color: #222222;
+    margin-top: 5px;
+}
+
+.habilidades p {
+    color: #444444;
+}
+
+/* Barra superior blanca y fija en el techo de la pantalla */
 .barra-superior {
     background-color: rgba(255, 255, 255, 0.95); /* Blanco con una pizca ligera de transparencia */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil abajo de la barra */
     padding: 15px 0;
     width: 100%;
+    position: fixed; /* Hace que se quede fija al bajar */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Asegura que pase por encima de los proyectos */
 }
 
-/* Contenedor interno para alinear los elementos */
+/* Contenedor interno para alinear los elementos de la barra */
 .header-contenido {
     max-width: 1100px;
     margin: 0 auto;
@@ -145,6 +159,8 @@ body {
 .cerrar-modal:hover {
     color: #cccccc; /* Cambia a gris claro al pasar el mouse por encima */
 }
+
+
 /* ==========================================================================
    DISEÑO MODERNO PARA LAS SECCIONES DE PROYECTOS (AUTOCAD Y EXCEL)
    ========================================================================== */
